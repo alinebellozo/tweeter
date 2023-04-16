@@ -1,1 +1,32 @@
 /* Style for the header */
+
+header {
+  height: 400px;
+  width: 100%;
+  padding-top: 150px;
+  background-color: #00f0ac;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar > img {
+  height: 12rem;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-weight: 300;
+}
+
+h2 span {
+  font-weight: bold;
+}
