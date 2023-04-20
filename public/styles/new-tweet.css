@@ -1,0 +1,36 @@
+.new-tweet > h2 {
+  color: #545149;
+  margin: 1rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+label {
+  font-weight: bold;
+  border-bottom: solid 5px #545149;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.button-counter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+button {
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0.5rem;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+  color: #545149;
+}
