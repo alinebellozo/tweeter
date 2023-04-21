@@ -14,7 +14,7 @@ label {
   font-weight: bold;
   border-bottom: solid 5px #545149;
   height: 2.5rem;
-  margin-bottom: 1rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .button-counter {

@@ -21,7 +21,7 @@ p > span {
   font-weight: bold;
 }
 
-.fa-solid {
+.fa-solid.fa-angles-down{
   color: red;
 }
 
