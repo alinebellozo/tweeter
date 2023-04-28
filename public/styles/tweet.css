@@ -5,6 +5,10 @@
   margin-bottom: 2rem;
 }
 
+#tweet-form label {
+  padding: 2.5rem 0;
+}
+
 .tweets-container:hover {
   box-shadow: 5px 5px 5px cornflowerblue;
 }
