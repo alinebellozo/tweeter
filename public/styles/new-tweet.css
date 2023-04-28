@@ -20,7 +20,8 @@ label {
 .button-counter {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  align-items: center;
+  margin: 1rem 0;
 }
 
 button {

@@ -1,15 +1,16 @@
-.tweet-container {
+.tweets-container {
   border-style: solid;
   border-color: #545149;
   border-width: 5px;
 }
 
-.tweet-container:hover {
+.tweets-container:hover {
   box-shadow: 5px 5px 5px cornflowerblue;
 }
 
 .tweet > header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 95%;
@@ -17,13 +18,13 @@
   padding: 1rem 0;
 }
 
-.avatar-container {
+.avatar {
   display: flex;
   justify-content: space-between;
   width: 14%;
 }
 
-.avatar-container > img {
+.avatar > img {
   height: 4rem;
   width: auto;
 }
