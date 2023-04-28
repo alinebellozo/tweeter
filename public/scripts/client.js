@@ -47,20 +47,20 @@ $(document).ready(function() {
     let $tweet = `
     <article class="tweet">
       <header>
-        <div class="avatar">
-        ${tweet.user.avatars}
+        <div class="avatar-container">
+          <img src=${tweet.user.avatars}/>
+          <span class="name">${tweet.user.name}</span>
         </div>
-        <span class="name">${tweet.user.name}</span>
         <span class="handle">${tweet.user.handle}</span>
-      <header>
+      </header>
       <span class="user-tweet">${tweet.content.text}</span>
-      <span class="creation-date">${tweet.created_at}</span>
       <footer>
-      <div class="icons">
-      <i class="fa-solid fa-flag"></i>
-      <i class="fa-sharp fa-solid fa-retweet"></i>
-      <i class="fa-solid fa-heart"></i>
-      </div>
+        <span class="creation-date">${tweet.created_at}</span>
+        <div class="icons">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-sharp fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
       </footer>
     </article>
     `;
