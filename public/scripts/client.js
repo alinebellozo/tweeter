@@ -31,19 +31,17 @@ const data = [
 ];
 
 $(document).ready(function() {
-
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     // loops through tweets
     for (let tweet of tweets) {
-    // calls createTweetElement for each tweet
+      // calls createTweetElement for each tweet
       let $tweet = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
-    $('#tweets-container').append($tweet);
+      // takes return value and appends it to the tweets container
+      $("#tweets-container").append($tweet);
     }
   };
-  
-  const createTweetElement = function(tweet) {
-    
+
+  const createTweetElement = function (tweet) {
     let $tweet = `
     <article class="tweet">
       <header>
@@ -68,5 +66,35 @@ $(document).ready(function() {
     return $tweet;
   };
 
-    renderTweets(data);  
+  renderTweets(data);
+
+  const handleSubmitRequest = function(text) {
+      if (text.length > 140) {
+        return alert("Oops, this tweet is too long.");
+      } else if (!text) {
+        return alert("Oops, your tweet can't be blank.");
+      } else {
+        $.ajax({
+          url: "/tweets",
+          method: "POST",
+          data: { text },
+        })
+          .done(function () {
+            alert("Success!");
+          })
+          .fail(function () {
+            alert("Error");
+          })
+          .always(function () {
+            alert("Finished!");
+          });
+      }
+  }
+
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+    $(this).serialize();
+    console.log($(this).serialize());
+    handleSubmitRequest($("textarea").val());
+  });
 });
