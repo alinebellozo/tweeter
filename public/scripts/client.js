@@ -5,6 +5,13 @@
  */
 
 $(document).ready(function() {
+  // function to prevent XSS attack (a type of code injection)
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = function (tweets) {
     // loops through tweets
     for (let tweet of tweets) {
@@ -20,12 +27,12 @@ $(document).ready(function() {
     <article class="tweet">
       <header>
         <div class="avatar-container">
-          <img src=${tweet.user.avatars}/>
-          <span class="name">${tweet.user.name}</span>
+          <img src=${escape(tweet.user.avatars)}/>
+          <span class="name">${escape(tweet.user.name)}</span>
         </div>
-        <span class="handle">${tweet.user.handle}</span>
+        <span class="handle">${escape(tweet.user.handle)}</span>
       </header>
-      <span class="user-tweet">${tweet.content.text}</span>
+      <span class="user-tweet">${escape(tweet.content.text)}</span>
       <footer>
         <span class="creation-date">${timeago.format(tweet.created_at)}</span>
         <div class="icons">
@@ -41,7 +48,7 @@ $(document).ready(function() {
   };
 
   // function responsible for fetching tweets from the /tweets page
-  const loadTweets = function() {
+  const loadTweets = function () {
     $.ajax({
       type: "GET",
       url: "/tweets",
@@ -52,12 +59,11 @@ $(document).ready(function() {
 
   loadTweets("/tweets", "GET", renderTweets);
 
-const resetForm = function() {
-  document.getElementById("tweet-form").reset();
-};
+  const resetForm = function () {
+    document.getElementById("tweet-form").reset();
+  };
 
-
-  $("form").on("submit", function(event) {
+  $("form").on("submit", function (event) {
     event.preventDefault();
 
     const text = $("textarea").length;
@@ -72,7 +78,7 @@ const resetForm = function() {
       $("#textarea").val("");
 
       // POST request that sends the serialized data to the server
-      $.post({ 
+      $.post({
         url: "/tweets",
         method: "POST",
         data: serializedData,
