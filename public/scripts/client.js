@@ -5,33 +5,33 @@
  */
 
 // Test / driver code (temporary). Eventually will get this from the server.
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1682559414339,
-  },
-];
+// const data = [
+//   {
+//     user: {
+//       name: "Newton",
+//       avatars: "https://i.imgur.com/73hZDYK.png",
+//       handle: "@SirIsaac",
+//     },
+//     content: {
+//       text: "If I have seen further it is by standing on the shoulders of giants",
+//     },
+//     created_at: 1461116232227,
+//   },
+//   {
+//     user: {
+//       name: "Descartes",
+//       avatars: "https://i.imgur.com/nlhLi3I.png",
+//       handle: "@rd",
+//     },
+//     content: {
+//       text: "Je pense , donc je suis",
+//     },
+//     created_at: 1682559414339,
+//   },
+// ];
 
 $(document).ready(function() {
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // loops through tweets
     for (let tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -41,7 +41,7 @@ $(document).ready(function() {
     }
   };
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     let $tweet = `
     <article class="tweet">
       <header>
@@ -66,35 +66,49 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
+  // renderTweets(data);
 
+  // function responsible for fetching tweets from the /tweets page
+  const loadTweets = function() {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
+      dataType: "json",
+      success: renderTweets,
+    });
+  };
+
+  loadTweets("/tweets", "GET", renderTweets);
+
+  // POST request that sends the serialized data to the server
   const handleSubmitRequest = function(text) {
-      if (text.length > 140) {
-        return alert("Oops, this tweet is too long.");
-      } else if (!text) {
-        return alert("Oops, your tweet can't be blank.");
-      } else {
-        $.ajax({
-          url: "/tweets",
-          method: "POST",
-          data: { text },
+    if (text.length > 140) {
+      return alert("Oops, this tweet is too long.");
+    } else if (!text) {
+      return alert("Oops, your tweet can't be blank.");
+    } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: { text },
+      })
+        .done(function () {
+          alert("Success!");
         })
-          .done(function () {
-            alert("Success!");
-          })
-          .fail(function () {
-            alert("Error");
-          })
-          .always(function () {
-            alert("Finished!");
-          });
-      }
-  }
+        .fail(function () {
+          alert("Error");
+        })
+        .always(function () {
+          alert("Finished!");
+        });
+    }
+  };
 
-  $("form").on("submit", function (event) {
+  // serialize data
+  $("form").on("submit", function(event) {
     event.preventDefault();
     $(this).serialize();
-    console.log($(this).serialize());
+    // console.log($(this).serialize());
     handleSubmitRequest($("textarea").val());
   });
 });

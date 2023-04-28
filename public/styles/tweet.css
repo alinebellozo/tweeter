@@ -20,9 +20,10 @@
 
 .avatar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.5rem;
   align-items: center;
-  width: 14%;
+  width: 50%;
 }
 
 .avatar-container > img {
