@@ -1,14 +1,19 @@
-/* .new-tweet > h2 {
-  color: #545149;
-  margin: 1rem 0;
-} */
+/* Style for a new tweet */
 
-.error-message-1, .error-message-2 {
+.error-length, .error-empty {
   display: none;
   background-repeat: no-repeat;
+  border: 1px solid;
+  margin: 10px 0px;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url();
 }
 
-form {
+#tweet-form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -39,4 +44,17 @@ label {
 .counter {
   font-family: 'Bungee', cursive;
   color: #545149;
+}
+
+/* tablet breakpoint */
+@media only screen and (min-width: 768px) {
+  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+}
+
+/* desktop breakpoint */
+@media only screen and (min-width: 1024px) {
+  #tweet-form {
+    padding-top: 9.4rem;
+  }
+  
 }

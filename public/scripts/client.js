@@ -61,6 +61,7 @@ $(document).ready(function() {
 
   loadTweets("/tweets", "GET", renderTweets);
 
+
   $("form").on("submit", function(event) {
     event.preventDefault();
 

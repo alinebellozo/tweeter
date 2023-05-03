@@ -11,7 +11,7 @@ nav {
   position: fixed;
 }
 
-nav > span {
+.logo {
   font-family: 'Bungee', cursive;
   display: flex;
   align-items: center;
@@ -29,4 +29,25 @@ p > span {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* tablet breakpoint */
+@media only screen and (min-width: 768px) {
+
+  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+  nav {
+    background-color: #00f0ac;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  }
+}
+
+/* desktop breakpoint */
+@media only screen and (min-width: 1024px) {
+
+  nav {
+    width: 100vw;
+    z-index: 1;
+    top: 0;
+    background-color: #4056A1;
+  }
 }

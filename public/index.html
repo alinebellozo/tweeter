@@ -45,7 +45,7 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
       <div class="nav-right">
         <p><span>Write</span> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
@@ -63,9 +63,9 @@
     <main class="container">
       
       <section class="new-tweet">
-        <div class="error-message">
-          <span class="error-message-1">Oops, this tweet is too long.</span>
-          <span class="error-message-2">Oops, your tweet can't be empty.</span>
+        <div>
+          <span class="error-length">Oops, this tweet is too long.</span>
+          <span class="error-empty">Oops, your tweet can't be empty.</span>
         </div>
         <form id="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
