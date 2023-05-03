@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
+    <!-- Viewport zooming disabling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +63,10 @@
     <main class="container">
       
       <section class="new-tweet">
+        <div class="error-message">
+          <span class="error-message-1">Oops, this tweet is too long.</span>
+          <span class="error-message-2">Oops, your tweet can't be empty.</span>
+        </div>
         <form id="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>

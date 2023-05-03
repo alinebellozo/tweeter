@@ -5,12 +5,14 @@
  */
 
 $(document).ready(function() {
+
   // function to prevent XSS attack (a type of code injection)
-  const escape = function(str) {
+  const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
 
   const renderTweets = function (tweets) {
     // loops through tweets
@@ -48,7 +50,7 @@ $(document).ready(function() {
   };
 
   // function responsible for fetching tweets from the /tweets page
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       type: "GET",
       url: "/tweets",
@@ -59,42 +61,41 @@ $(document).ready(function() {
 
   loadTweets("/tweets", "GET", renderTweets);
 
-  const resetForm = function () {
-    document.getElementById("tweet-form").reset();
-  };
-
-  $("form").on("submit", function (event) {
+  $("form").on("submit", function(event) {
     event.preventDefault();
 
-    const text = $("textarea").length;
+    const text = $("#tweet-text").val();
 
     if (text.length > 140) {
-      return alert("Oops, this tweet is too long.");
-    } else if (!text) {
-      return alert("Oops, your tweet can't be blank.");
-    } else {
-      // serialize data
-      let serializedData = $(this).serialize();
-      $("#textarea").val("");
-
-      // POST request that sends the serialized data to the server
-      $.post({
-        url: "/tweets",
-        method: "POST",
-        data: serializedData,
-      })
-        .done(function () {
-          alert("Success!");
-          resetForm();
-        })
-        .fail(function () {
-          alert("Error");
-        })
-        .always(function () {
-          console.log("Finished!");
-        });
-
-      loadTweets();
+      $(".error-message-1").slideDown();
+      return;
     }
+    if (text.length === 0) {
+      $(".error-message-1").slideUp();
+      $(".error-message-2").slideDown();
+      return;
+    }
+       
+    // serialize data
+    let serializedData = $(this).serialize();
+
+    // POST request that sends the serialized data to the server
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: serializedData,
+    })
+    
+    .done(function() {
+      alert("Success!");
+      loadTweets();
+      $("textarea").val("");
+    })
+    .fail(function() {
+      console.log("Error!")
+    })
+    .always(function() {
+      console.log("Finished!");
+    });
   });
 });
