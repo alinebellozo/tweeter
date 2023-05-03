@@ -26,10 +26,6 @@ main {
   margin: auto;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 @media only screen and (min-width: 1024px) {
   main {
     width: 50%;

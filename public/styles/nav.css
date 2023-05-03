@@ -2,7 +2,7 @@
 
 nav {
   height: 120px;
-  width: 100%;
+  width: 100vw;
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
@@ -33,8 +33,6 @@ p > span {
 
 /* tablet breakpoint */
 @media only screen and (min-width: 768px) {
-
-  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
   nav {
     background-color: #00f0ac;
     background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
@@ -43,9 +41,7 @@ p > span {
 
 /* desktop breakpoint */
 @media only screen and (min-width: 1024px) {
-
   nav {
-    width: 100vw;
     z-index: 1;
     top: 0;
     background-color: #4056A1;

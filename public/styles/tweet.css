@@ -84,7 +84,14 @@ footer {
 
 /* tablet breakpoint */
 @media only screen and (min-width: 768px) {
-  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+  footer {
+      width: 88%;
+      margin-left: 3rem;
+    }
+
+  .icons {
+    width: 18%;
+  }
 }
 
 /* desktop breakpoint */
