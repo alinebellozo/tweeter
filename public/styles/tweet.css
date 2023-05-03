@@ -84,6 +84,10 @@ footer {
 
 /* tablet breakpoint */
 @media only screen and (min-width: 768px) {
+  .user-tweet {
+    word-wrap: break-word;
+  }
+  
   footer {
       width: 88%;
       margin-left: 3rem;

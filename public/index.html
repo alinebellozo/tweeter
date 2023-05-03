@@ -61,12 +61,10 @@
 
     <!-- Page-specific (main) content -->
     <main class="container">
-      
       <section class="new-tweet">
-        <div>
-          <span class="error-length">Oops, this tweet is too long.</span>
-          <span class="error-empty">Oops, your tweet can't be empty.</span>
-        </div>
+        <span class="error-length"><i class="fas fa-exclamation-triangle"></i> Oops, this tweet is too long.</span>
+        <span class="error-empty"><i class="fas fa-exclamation-triangle"></i> Oops, your tweet can't be empty.</span>
+        <span class="tweet-success"><i class="fa-solid fa-check"></i> Tweet posted successfully!</span>
         <form id="tweet-form" action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -77,8 +75,7 @@
         </form>
       </section>
 
-      <section id="tweets-container">
-      </section>
+      <section id="tweets-container"></section>
 
     </main>
   </body>

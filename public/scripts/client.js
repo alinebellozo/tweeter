@@ -68,13 +68,19 @@ $(document).ready(function() {
     const text = $("#tweet-text").val();
 
     if (text.length > 140) {
-      $(".error-message-1").slideDown();
+      $(".error-empty").slideUp();
+      $(".tweet-success").slideUp();
+      $(".error-length").slideDown();
       return;
     }
     if (text.length === 0) {
-      $(".error-message-1").slideUp();
-      $(".error-message-2").slideDown();
+      $(".error-length").slideUp();
+      $(".tweet-success").slideUp();
+      $(".error-empty").slideDown();
       return;
+    } else {
+      $(".error-length").slideUp();
+      $(".error-empty").slideUp();
     }
        
     // serialize data
@@ -88,8 +94,10 @@ $(document).ready(function() {
     })
     
     .done(function() {
-      alert("Success!");
       loadTweets();
+      $(".tweet-success").slideDown();
+      $(".error-length").slideUp();
+      $(".error-empty").slideUp();
       $("textarea").val("");
     })
     .fail(function() {

@@ -1,16 +1,27 @@
 /* Style for a new tweet */
 
+.new-tweet {
+  padding-top: 9.4rem;
+}
+
 .error-length, .error-empty {
   display: none;
-  background-repeat: no-repeat;
-  border: 1px solid;
-  margin: 10px 0px;
-  padding: 15px 10px 15px 50px;
-  background-repeat: no-repeat;
+  border: 2px dotted;
+  padding: .5em;
   background-position: 10px center;
   color: #D8000C;
-  background-color: #FFBABA;
-  background-image: url();
+  background-color: #fca6a6;
+  width: fit-content;
+}
+
+.tweet-success {
+  display: none;
+  border: 2px dotted;
+  padding: .5em;
+  background-position: 10px center;
+  color: green;
+  background-color: #c0f5c0;
+  width: fit-content;
 }
 
 #tweet-form {
@@ -44,11 +55,4 @@ label {
 .counter {
   font-family: 'Bungee', cursive;
   color: #545149;
-}
-
-/* desktop breakpoint */
-@media only screen and (min-width: 1024px) {
-  #tweet-form {
-    padding-top: 9.4rem;
-  }
 }

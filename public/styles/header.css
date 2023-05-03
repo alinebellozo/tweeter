@@ -36,11 +36,6 @@
     font-weight: bold;
   }
 
-/* tablet breakpoint */
-@media only screen and (min-width: 768px) {
-  /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
-}
-
 /* desktop breakpoint */
 @media only screen and (min-width: 1024px) {
   .page-header {
