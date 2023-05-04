@@ -6,7 +6,11 @@ This project aims to help students to practice their HTML, CSS, JS, jQuery and A
 
 ## Final Project
 
-
+![Screenshot of homepage for tablet](https://github.com/alinebellozo/tweeter/blob/master/docs/tablet-homepage.png)
+![Screenshot of homepage for desktop](https://github.com/alinebellozo/tweeter/blob/master/docs/desktop-homepage.png)
+![Screenshot of tweet successfully posted](https://github.com/alinebellozo/tweeter/blob/master/docs/tweet-posted-success.png)
+![Screenshot of error due to tweet being empty](https://github.com/alinebellozo/tweeter/blob/master/docs/error-tweet-empty.png)
+![Screenshot of error due to tweet being too long](https://github.com/alinebellozo/tweeter/blob/master/docs/error-tweet-length.png)
 
 ## Getting Started
 
