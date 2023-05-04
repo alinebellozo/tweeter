@@ -31,9 +31,14 @@ p > span {
   align-items: center;
 }
 
+.nav-right > p {
+  margin-bottom: 0;
+}
+
 /* tablet breakpoint */
 @media only screen and (min-width: 768px) {
   nav {
+    height: 90px;
     background-color: #00f0ac;
     background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
   }

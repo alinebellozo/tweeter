@@ -6,7 +6,7 @@
   }
 
   .page-header {
-    width: 100%;
+    width: 100vh;
     height: 25rem;
     padding-top: 9.375rem;
     background-color: #00f0ac;
@@ -34,6 +34,13 @@
   
   h2 span {
     font-weight: bold;
+  }
+
+  /* tablet breakpoint */
+  @media only screen and (min-width: 768px) {
+    .page-header {
+      padding-top: 7.2rem;
+    }
   }
 
 /* desktop breakpoint */

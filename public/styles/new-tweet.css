@@ -56,3 +56,9 @@ label {
   font-family: 'Bungee', cursive;
   color: #545149;
 }
+
+@media only screen and (min-width: 768px) {
+  .new-tweet {
+    padding-top: 0.5rem;
+  }
+}
