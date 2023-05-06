@@ -2,15 +2,15 @@ $(document).ready(function () {
   
   $("textarea").on("keyup", function () {
     // .val() gets the values of form elements such as input, select and textarea
-    let tweetChars = 140 - $(this).val().length;
-    console.log(tweetChars - 1);
+    const tweetChars = 140 - $(this).val().length;
 
     $(".counter").html(`${tweetChars}`);
 
     if (tweetChars < 0) {
-      $(".counter").css("color", "red");
+      $(".counter").addClass("counter-invalid");
     } else {
-      $(".counter").css("color", "#545149");
+      $(".counter").removeClass("counter-invalid");
     }
+
   });
 });

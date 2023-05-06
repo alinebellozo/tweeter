@@ -1,9 +1,5 @@
 /* Style for a new tweet */
 
-.new-tweet {
-  padding-top: 9.4rem;
-}
-
 .error-length, .error-empty {
   display: none;
   border: 2px dotted;
@@ -57,8 +53,16 @@ label {
   color: #545149;
 }
 
+/* tablet breakpoint */
 @media only screen and (min-width: 768px) {
   .new-tweet {
     padding-top: 0.5rem;
+  }
+}
+
+/* desktop breakpoint */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    padding-top: 9.4rem;
   }
 }

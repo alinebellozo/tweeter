@@ -1,47 +1,47 @@
 /* Style for the header */
 
-  body {
-    display: flex;
-    flex-flow: row wrap;
-  }
+body {
+  display: flex;
+  flex-flow: row wrap;
+}
 
+.page-header {
+  width: 100vw;
+  height: 25rem;
+  padding-top: 9.375rem;
+  background-color: #00f0ac;
+  background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar > img {
+  height: 12rem;
+}
+
+h2 {
+  padding-bottom: 2.5rem;
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-weight: 300;
+}
+
+h2 span {
+  font-weight: bold;
+}
+
+/* tablet breakpoint */
+@media only screen and (min-width: 768px) {
   .page-header {
-    width: 100vh;
-    height: 25rem;
-    padding-top: 9.375rem;
-    background-color: #00f0ac;
-    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+    padding-top: 7.2rem;
   }
-  
-  .avatar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .avatar > img {
-    height: 12rem;
-  }
-
-  h2 {
-    padding-bottom: 2.5rem;
-    text-align: center;
-    margin: 0;
-    color: white;
-    font-weight: 300;
-  }
-  
-  h2 span {
-    font-weight: bold;
-  }
-
-  /* tablet breakpoint */
-  @media only screen and (min-width: 768px) {
-    .page-header {
-      padding-top: 7.2rem;
-    }
-  }
+}
 
 /* desktop breakpoint */
 @media only screen and (min-width: 1024px) {

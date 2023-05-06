@@ -99,6 +99,7 @@ $(document).ready(function() {
       $(".error-length").slideUp();
       $(".error-empty").slideUp();
       $("textarea").val("");
+      $(".counter").text(140);
     })
     .fail(function() {
       console.log("Error!")

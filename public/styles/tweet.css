@@ -7,12 +7,12 @@
   margin-bottom: 2rem;
 }
 
-#tweet-form label {
-  padding: 2.5rem 0;
+.tweet:hover {
+  box-shadow: 5px 5px 5px cornflowerblue;
 }
 
-.tweets-container:hover {
-  box-shadow: 5px 5px 5px cornflowerblue;
+#tweet-form label {
+  padding: 2.5rem 0;
 }
 
 .tweet > header {
@@ -48,7 +48,7 @@
   height: 3.5rem;
   margin: 0 2rem;
   padding: 0 1.5rem;
-  word-wrap: break-word;
+  word-break: break-all;
 }
 
 footer {
@@ -81,13 +81,17 @@ footer {
   color: darkgoldenrod;
 }
 
+.counter {
+  color: #545149;
+}
+
+.counter-invalid {
+  color: red;
+}
+
 
 /* tablet breakpoint */
 @media only screen and (min-width: 768px) {
-  .user-tweet {
-    word-wrap: break-word;
-  }
-  
   footer {
       width: 88%;
       margin-left: 3rem;
